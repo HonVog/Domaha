@@ -1,30 +1,156 @@
 #include "Matrix.h"
+#include <iostream>
 
-template <class  T>
-void Matrix<T>::Cliner() {
-	delegate[] tip; size = 0; tip = nullptr; ID = 0;
-};
-
-template <class T>
-T& Matrix<T>::operator[] (int index) {
-	assert(index >= 0 && index < MAX)
-		return tip[index];
-}
 
 template <class T>
 int Matrix<T>::getSize() { return size; }
 
 template <class T>
-void Matrix<T>::operator ()(T element) {
-	if (ID < MAX) { tip[ID] = element; ++ID; return; }
-
-	std::cout << " the arrey is full";
+void newElement( int i, T element) {
+	
+		tip [i] = element;;
+	
+	
 }
 
 template <class T>
-Matrix<T> Matrix<T>::operator + ( Matrix& matrix) {
+Matrix<T> Matrix<T>::operator + ( Matrix<T>& matrix) {
 	Matrix newMatrix;
+	int minSize = (size < matrix.size) ? size : matrix.size;
+	newMatrix.size = (size > matrix.size) ? size : matrix.size;
 
-
+	for (int i = 0; i < newMatrix.size; ++i) {
+		if (i < minSize) {
+			newMatrix[i] = tip[i] + matrix[i];
+		} else {
+			if (size > matrix.size) newMatrix[i] = tip[i];
+			else newMatrix[i] = matrix[i];
+		}
+	}
+	newMatrix.ID = (ID < matrix.ID) ? ID : matrix.ID;
+	return newMatrix;
 }
+
+template <class T>
+Matrix<T> Matrix<T>::operator += (Matrix<T>& matrix) {
+	return (this + matrix);
+}
+
+template <class T>
+Matrix<T> Matrix<T>::operator + (T element) {
+	for (int i = 0; i < size; ++i) tip[i] += element;
+	return this;
+}
+
+template <class T>
+Matrix<T> Matrix<T>:: operator += (T element) {
+	return (this + element);
+}
+
+template <class T>
+Matrix<T> Matrix<T>::operator -(Matrix<T>& matrix){
+	Matrix newMatrix;
+	int minSize = (size < matrix.size) ? size : matrix.size;
+	newMatrix.size = (size > matrix.size) ? size : matrix.size;
+
+	for (int i = 0; i < newMatrix.size; ++i) {
+		if (i < minSize) {
+			newMatrix[i] = tip[i] - matrix[i];
+		}
+		else {
+			if (size > matrix.size) newMatrix[i] = tip[i];
+			else newMatrix[i] = matrix[i];
+		}
+	}
+	newMatrix.ID = (ID < matrix.ID) ? ID : matrix.ID;
+	return newMatrix;
+}
+
+template <class T>
+Matrix<T> Matrix<T>:: operator - (T element) {
+	for (int i = 0; i < size; ++i) tip[i] -= element;
+	return this;
+}
+
+template <class T>
+Matrix<T> Matrix<T>::operator -=(Matrix<T>& matrix) {
+	return (this - matrix);
+}
+
+template <class T>
+Matrix<T> Matrix<T>:: operator -= (T element) {
+	return (this - element);
+}
+
+template <class T>
+Matrix<T> Matrix<T>::operator *(Matrix<T>& matrix) {
+	Matrix newMatrix;
+	int minSize = (size < matrix.size) ? size : matrix.size;
+	newMatrix.size = (size > matrix.size) ? size : matrix.size;
+
+	for (int i = 0; i < newMatrix.size; ++i) {
+		if (i < minSize) {
+			newMatrix[i] = tip[i] * matrix[i];
+		}
+		else {
+			if (size > matrix.size) newMatrix[i] = tip[i];
+			else newMatrix[i] = matrix[i];
+		}
+	}
+	newMatrix.ID = (ID < matrix.ID) ? ID : matrix.ID;
+	return newMatrix;
+}
+
+template <class T>
+Matrix<T> Matrix<T>:: operator * (T element) {
+	for (int i = 0; i < size; ++i) tip[i] *= element;
+	return this;
+}
+
+template <class T>
+Matrix<T> Matrix<T>::operator *=(Matrix<T>& matrix) {
+	return (this * matrix);
+}
+
+template <class T>
+Matrix<T> Matrix<T>:: operator *= (T element) {
+	return (this * element);
+}
+
+template <class T>
+Matrix<T> Matrix<T>::operator /(Matrix<T>& matrix) {
+	Matrix newMatrix;
+	int minSize = (size < matrix.size) ? size : matrix.size;
+	newMatrix.size = (size > matrix.size) ? size : matrix.size;
+
+	for (int i = 0; i < newMatrix.size; ++i) {
+		if (i < minSize) {
+			newMatrix[i] = tip[i] / matrix[i];
+		}
+		else {
+			if (size > matrix.size) newMatrix[i] = tip[i];
+			else newMatrix[i] = matrix[i];
+		}
+
+	}
+	newMatrix.ID = (ID < matrix.ID) ? ID : matrix.ID;
+	return newMatrix;
+}
+
+template <class T>
+Matrix<T> Matrix<T>:: operator / (T element) {
+	for (int i = 0; i < size; ++i) tip[i] *= element;
+	return this;
+}
+
+template <class T>
+Matrix<T> Matrix<T>::operator /=(Matrix<T>& matrix) {
+	return (this / matrix);
+}
+
+template <class T>
+Matrix<T> Matrix<T>:: operator /= (T element) {
+	return (this / element);
+}
+
 //(+, –, *, / )

@@ -8,10 +8,20 @@
 */
 
 #include <iostream>
+#include "Matrix.h"
+#include <ctime>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Matrix<double> mat1(10);
+    Matrix<double> mat2(10);
+
+    for (int i = 0; i < 10; ++i) {
+
+        std::cout << mat1.print(i);
+    }
+
+    
 }
 
 
