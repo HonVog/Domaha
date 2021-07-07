@@ -17,11 +17,24 @@ int main()
     Matrix<double> mat2(10);
 
     for (int i = 0; i < 10; ++i) {
+        
+        mat1(i) = {rand() % 10 };
+        mat2(i) = rand() % 10;
 
-        std::cout << mat1.print(i);
+        std::cout << mat1.print(i) << '\n'
+            << mat2.print(i) << std::endl;
     }
 
-    
+    mat1 += 1;
+    mat2 = mat1 + mat2;
+
+    for (int i = 0; i < 10; ++i) {
+
+        std::cout << mat1.print(i) << '\n'
+            << mat2.print(i) << std::endl;
+    }
+
+    return 0;
 }
 
 
