@@ -1,4 +1,6 @@
-﻿  Domka.cpp
-  Parrot.cpp
+﻿  child.cpp
+  child2.cpp
+  Domka.cpp
   Создание кода...
-  Domka.vcxproj -> C:\Users\Georgiy_PC\Desktop\DZ\Debug\Domka.exe
+Domka.obj : error LNK2019: ссылка на неразрешенный внешний символ "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class child2<int,int,int,int,int,int> const &)" (??6@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AAV01@ABV?$child2@HHHHHH@@@Z) в функции _main.
+C:\Users\Georgiy_PC\Desktop\DZ\Debug\Domka.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
