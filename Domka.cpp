@@ -19,7 +19,23 @@
 using namespace std;
 int main()
 {
-
+    DableList lst;
+    //Тестовая строка
+    char s[] = "Hello, World !!!\n";
+   
+    cout << s << "\n\n";
+    
+    int len = strlen(s); 
+        for (int i = 0; i < len; i++)
+            lst.Add(s[i]);
+    
+    lst.Print();
+    
+    lst.Del();
+    lst.Del();
+    lst.Del();
+  
+    lst.Print();
     return 0;
 }
 
