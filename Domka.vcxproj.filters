@@ -18,24 +18,24 @@
     <ClCompile Include="Domka.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="base.cpp">
+    <ClCompile Include="DableList.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="child.cpp">
+    <ClCompile Include="Abstrac.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="child2.cpp">
+    <ClCompile Include="TryCetch.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="base.h">
+    <ClInclude Include="DableList.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="child.h">
+    <ClInclude Include="Abstrac.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="child2.h">
+    <ClInclude Include="TryCetch.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
